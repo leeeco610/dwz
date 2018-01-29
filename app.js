@@ -11,7 +11,14 @@ const base58 = require('./tools/base58');
 // grab the url model
 const Url = require('./models/url');
 
-mongoose.connect('mongodb://' + config.db.host + '/' + config.db.name);
+const options = {
+    server: {
+        auto_reconnect: true,
+        poolSize: 30
+    }
+};
+
+mongoose.connect('mongodb://' + config.db.host + '/' + config.db.name, options);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
