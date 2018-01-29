@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "supervisor --inspect -e node,js,css,html -i node_modules,public,views ./app.js",
-    "debug": "node-debug ./bin/www",
-    "prod": "NODE_ENV=prod pm2 start ./bin/www -i 1 -n \"dwz\"",
+    "prod": "NODE_ENV=prod pm2 start app.js -i 1 -n \"dwz\""
   },
   "author": "leeeco610",
   "license": "MIT",

@@ -18,6 +18,7 @@ var urlSchema = new Schema({
 urlSchema.pre('save', function(next){
   var doc = this;
   counter.findByIdAndUpdate({_id: 'url_count'}, {$inc: {seq: 1} }, function(error, counter) {
+      console.log(counter);
       if (error)
           return next(error);
       doc.created_at = new Date();

@@ -1,5 +1,5 @@
-# Creating a URL Shortener with NodeJs, Express, and MongoDB
+#短网址生成
 
-This code is for the tutorial on creating a URL shortener using NodeJs, Express, and MongoDB.
+安装完MongoDB后， 进入设置库（例如：use dwz），执行插入：
 
-Check out the full tutorial at [coligo](http://coligo.io/create-url-shortener-with-node-express-mongo/)
+db.counters.insert({ _id: 'url_count', seq: 1 })  
