@@ -16,6 +16,11 @@ const options = {
         auto_reconnect: true,
 
         poolSize: 30,
+
+        socketTimeoutMS: 480000,
+
+        keepAlive: 300000,
+
         // sets how many times to try reconnecting
         reconnectTries: Number.MAX_VALUE,
         // sets the delay between every retry (milliseconds)
