@@ -14,7 +14,12 @@ const Url = require('./models/url');
 const options = {
     server: {
         auto_reconnect: true,
-        poolSize: 30
+
+        poolSize: 30,
+        // sets how many times to try reconnecting
+        reconnectTries: Number.MAX_VALUE,
+        // sets the delay between every retry (milliseconds)
+        reconnectInterval: 1000
     }
 };
 
