@@ -77,10 +77,16 @@ function setShortUrl(longUrl) {
 
 // 短网址处理get，post
 function shorten(longUrl) {
-  const seqKey = md5(longUrl);
-
   return new Promise((resolve) => {
-    rds.get(seqKey).then((seq) => {
+      const reg = /^(http(s)?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&:\/~\+#]*[\w\-\@?^=%&\/~\+#])?$/;
+      // 参数验证
+      if (!longUrl || !reg.test(longUrl)) {
+        resolve('您输入的参数有误');
+        return false;
+      }
+      const seqKey = md5(longUrl);
+
+      rds.get(seqKey).then((seq) => {
         if (!seq) { // redis不存在短网址，则存储
           setShortUrl(longUrl).then((shortUrl) => {
             resolve(shortUrl);
