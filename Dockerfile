@@ -12,7 +12,7 @@ WORKDIR /app
 RUN npm install --production --registry=https://registry.npm.taobao.org
 
 # Expose API port to the outside
-EXPOSE 8006
+EXPOSE 8666
 
 # Launch application
 CMD ["npm", "run", "dockerStart"]
