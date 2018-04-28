@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A NodeJS + Express + Redis based URL shortener",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeeco610/dwz"
+  },
   "scripts": {
     "dev": "supervisor --inspect -e node,js,css,html -i node_modules,public,views ./app.js",
     "prod": "NODE_ENV=prod pm2 start app.js -i max -n \"dwz\" --restart-delay 1000 --max-restarts 100",
