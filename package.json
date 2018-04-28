@@ -1,18 +1,18 @@
 {
   "name": "dwz",
   "version": "1.0.0",
-  "description": "A NodeJS + Express + MongoDB based URL shortener",
+  "description": "A NodeJS + Express + Redis based URL shortener",
   "main": "app.js",
   "scripts": {
     "dev": "supervisor --inspect -e node,js,css,html -i node_modules,public,views ./app.js",
-    "prod": "NODE_ENV=prod pm2 start app.js -i 1 -n \"dwz\""
+    "prod": "NODE_ENV=prod pm2 start app.js -i max -n \"dwz\" --restart-delay 1000 --max-restarts 100",
+    "dockerStart": "NODE_ENV=prod node app.js"
   },
   "author": "leeeco610",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "mongoose": "4.10",
     "redis": "^2.8.0",
     "serve-favicon": "~2.3.0"
   }
