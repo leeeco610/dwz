@@ -3,7 +3,7 @@
  * @type {{webhost: string, db: {host: string, name: string}}}
  */
 const config = {
-    port: '8666',
+    port: '9999',
     webhost: 'http://dwz.loobool.com/',
     redis: {
         host: "jredis-gz1-prod-redis-3e8glyxyyu.jmiss.jcloud.com",
